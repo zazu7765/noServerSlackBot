@@ -193,33 +193,197 @@ const app = new App({
           const result = await client.views.open({
             trigger_id: shortcut.trigger_id,
             view: {
-              type: "modal",
-              title: {
-                type: "plain_text",
-                text: "My App"
-              },
-              close: {
-                type: "plain_text",
-                text: "Close"
-              },
-              blocks: [
-                {
-                  type: "section",
-                  text: {
-                    type: "mrkdwn",
-                    text: "About the simplest modal you could conceive of :smile:\n\nMaybe <https://api.slack.com/reference/block-kit/interactive-components|*make the modal interactive*> or <https://api.slack.com/surfaces/modals/using#modifying|*learn more advanced modal use cases*>."
-                  }
+                "type": "modal",
+                "title": {
+                    "type": "plain_text",
+                    "text": "My App",
+                    "emoji": true
                 },
-                {
-                  type: "context",
-                  elements: [
+                "submit": {
+                    "type": "plain_text",
+                    "text": "Submit",
+                    "emoji": true
+                },
+                "close": {
+                    "type": "plain_text",
+                    "text": "Cancel",
+                    "emoji": true
+                },
+                "blocks": [
                     {
-                      type: "mrkdwn",
-                      text: "Psssst this modal was designed using <https://api.slack.com/tools/block-kit-builder|*Block Kit Builder*>"
+                        "type": "header",
+                        "text": {
+                            "type": "plain_text",
+                            "text": ":bookmark_tabs:  Available Classes  :bookmark_tabs:"
+                        }
+                    },
+                    {
+                        "type": "context",
+                        "elements": [
+                            {
+                                "text": "DATE, Year  |  Crafts for Charity",
+                                "type": "mrkdwn"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": "What Classes Are You Interested In?"
+                        },
+                        "accessory": {
+                            "type": "checkboxes",
+                            "options": [
+                                {
+                                    "text": {
+                                        "type": "mrkdwn",
+                                        "text": "Knitting for Beginners"
+                                    },
+                                    "value": "value-0"
+                                },
+                                {
+                                    "text": {
+                                        "type": "mrkdwn",
+                                        "text": "Knitting Beyond Basics"
+                                    },
+                                    "value": "value-1"
+                                },
+                                {
+                                    "text": {
+                                        "type": "mrkdwn",
+                                        "text": "Crocheting for Beginners"
+                                    },
+                                    "value": "value-2"
+                                }
+                            ],
+                            "action_id": "checkboxes-action"
+                        }
+                    },
+                    {
+                        "type": "divider"
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": " :blue_book: Knitting for Beginners :blue_book:"
+                        }
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": "Student Name | Time & Date"
+                        },
+                        "accessory": {
+                            "type": "button",
+                            "text": {
+                                "type": "plain_text",
+                                "text": "Sign Up",
+                                "emoji": true
+                            },
+                            "value": "sign up",
+                            "url": "https://docs.google.com/spreadsheets/d/1iA6Wh31JKgqBVflHOb-gidD91Ru6D43ntzGqHpdLGOI/edit?usp=sharing",
+                            "action_id": "button-action"
+                        }
+                    },
+                    {
+                        "type": "divider"
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": " :green_book: Knitting Beyond Basics :green_book:"
+                        }
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": "Student Name | Time & Date"
+                        },
+                        "accessory": {
+                            "type": "button",
+                            "text": {
+                                "type": "plain_text",
+                                "text": "Sign Up",
+                                "emoji": true
+                            },
+                            "value": "sign up",
+                            "url": "https://docs.google.com/spreadsheets/d/1iA6Wh31JKgqBVflHOb-gidD91Ru6D43ntzGqHpdLGOI/edit?usp=sharing",
+                            "action_id": "button-action"
+                        }
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": "Student Name | Time & Date"
+                        },
+                        "accessory": {
+                            "type": "button",
+                            "text": {
+                                "type": "plain_text",
+                                "text": "Sign Up",
+                                "emoji": true
+                            },
+                            "value": "sign up",
+                            "url": "https://docs.google.com/spreadsheets/d/1iA6Wh31JKgqBVflHOb-gidD91Ru6D43ntzGqHpdLGOI/edit?usp=sharing",
+                            "action_id": "button-action"
+                        }
+                    },
+                    {
+                        "type": "divider"
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": " :orange_book: Crocheting for Beginners :orange_book:"
+                        }
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": "Student Name | Time & Date"
+                        },
+                        "accessory": {
+                            "type": "button",
+                            "text": {
+                                "type": "plain_text",
+                                "text": "Sign Up",
+                                "emoji": true
+                            },
+                            "value": "sign up",
+                            "url": "https://docs.google.com/spreadsheets/d/1iA6Wh31JKgqBVflHOb-gidD91Ru6D43ntzGqHpdLGOI/edit?usp=sharing",
+                            "action_id": "button-action"
+                        }
+                    },
+                    {
+                        "type": "section",
+                        "text": {
+                            "type": "mrkdwn",
+                            "text": "Student Name | Time & Date"
+                        },
+                        "accessory": {
+                            "type": "button",
+                            "text": {
+                                "type": "plain_text",
+                                "text": "Sign Up",
+                                "emoji": true
+                            },
+                            "value": "sign up",
+                            "url": "https://docs.google.com/spreadsheets/d/1iA6Wh31JKgqBVflHOb-gidD91Ru6D43ntzGqHpdLGOI/edit?usp=sharing",
+                            "action_id": "button-action"
+                        }
+                    },
+                    {
+                        "type": "divider"
                     }
-                  ]
-                }
-              ]
+                ]
             }
           });
       
