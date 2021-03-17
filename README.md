@@ -16,7 +16,7 @@ a slack &#34;bot&#34; that does not use an http server
 ## Background
 A small bit of code made for a small slack group by a noob.
 ## Install
-#### This project uses node, npm, and Slack's Bolt packages.
+#### This project uses node, npm, and Slack's Bolt framework. Additional packages are added over time for better functionality
 Clone the repo through either HTTPS, SSH, Github CLI, download the ZIP, or use GitHub Desktop  
 Make sure to create a tokens.json file and place your tokens in there!
 ## Usage
