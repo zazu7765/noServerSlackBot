@@ -39,4 +39,4 @@ literally no one I have no friends
 ## License
 
 MIT © 2021 Daniel Ibanescu  
-[![forthebadge](https://forthebadge.com/images/badges/0-percent-optimized.svg)]
+![forthebadge](https://forthebadge.com/images/badges/0-percent-optimized.svg)
