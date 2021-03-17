@@ -1,5 +1,6 @@
 const { App } = require('@slack/bolt');
 const tokens = require("./tokens.json");
+var dateTime = require('get-date');
 const app = new App({
     token: tokens.SLACK_TOKEN, 
     appToken: tokens.APP_TOKEN,
@@ -196,7 +197,7 @@ const app = new App({
                 "type": "modal",
                 "title": {
                     "type": "plain_text",
-                    "text": "My App",
+                    "text": "Class Menu",
                     "emoji": true
                 },
                 "submit": {
@@ -221,7 +222,7 @@ const app = new App({
                         "type": "context",
                         "elements": [
                             {
-                                "text": "DATE, Year  |  Crafts for Charity",
+                                "text": `${dateTime()}  |  Crafts for Charity`,
                                 "type": "mrkdwn"
                             }
                         ]
